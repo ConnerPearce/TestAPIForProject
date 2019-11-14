@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using TestAPIForProject.Models;
+using TestAPIForProject.Repository;
 
 namespace TestAPIForProject
 {
@@ -27,6 +28,7 @@ namespace TestAPIForProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TestAPIForProject20191024081403_dbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("TestAPIForProjectContext")));
+            services.AddScoped<ITestAPIRepository, TestAPIRepository>(); 
 
             services.AddControllers();
         }
