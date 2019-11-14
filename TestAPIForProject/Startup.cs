@@ -26,8 +26,9 @@ namespace TestAPIForProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddDbContext<TestAPIForProject20191024081403_dbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("TestAPIForProjectContext")));
 
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

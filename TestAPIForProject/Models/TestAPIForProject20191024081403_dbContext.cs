@@ -18,13 +18,13 @@ namespace TestAPIForProject.Models
         public virtual DbSet<Test2> Test2 { get; set; }
         public virtual DbSet<TestTable> TestTable { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=tcp:testapiforproject20191024081403dbserver.database.windows.net,1433;Initial Catalog=TestAPIForProject20191024081403_db;Persist Security Info=False;User ID=Comp7211GroupProject;Password=Google1#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-            }
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer("Server=tcp:testapiforproject20191024081403dbserver.database.windows.net,1433;Initial Catalog=TestAPIForProject20191024081403_db;Persist Security Info=False;User ID=Comp7211GroupProject;Password=Google1#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        //    }
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
